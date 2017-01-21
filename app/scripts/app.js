@@ -15,34 +15,28 @@ angular
     'ngResource',
     'ui.router',
     'ngSanitize',
+    'chart.js',
     'ngTouch'
   ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-
-    // $urlRouterProvider.when('/instructor', '/instructor/TaNeeds');
-    // $urlRouterProvider.when('/admin', '/admin/courseMap');
-    // $urlRouterProvider.when('/student', '/student/apply/CSSE/201720');
-    // .when('/user', {
-    //   templateUrl: 'views/user.html',
-    //   controller: 'UserCtrl',
-    //   controllerAs: 'user'
-    // })
+  .config(function ($stateProvider, $urlRouterProvider){//, $locationProvider) {
+    // $locationProvider.html5Mode(true);
+    $urlRouterProvider.when('/user', '/user/history');
     $urlRouterProvider.otherwise('/');
     $stateProvider
-      // .state('login', {
-      //   url: '/login',
-      //   abstract: false,
-      //   params: {
-      //     'toState': '',
-      //     'toParams': {}
-      //   },
-      //   controller: 'LoginController',
-      //   templateUrl: 'modules/login/login.html',
-      //   resolve: {
-      //   }
-      // })
-      // .state('')
+      .state('user', {
+        url: '/user',
+        abstract: true,
+        templateUrl: 'views/user.html',
+        controller: 'UserCtrl',
+        controllerAs: 'user'
+      })
+      .state('user.history', {
+        url: '/history',
+        abstract: false,
+        templateUrl: 'views/history.html',
+        controller: 'HistoryCtrl',
+        controllerAs: 'history'
+      })
       .state('home', {
         url: '/',
         abstract: false,
@@ -51,7 +45,7 @@ angular
         controllerAs: 'main'
       })
       .state('about', {
-        url: '/',
+        url: '/about',
         abstract: false,
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
