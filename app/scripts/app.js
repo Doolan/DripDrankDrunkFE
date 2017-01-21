@@ -16,9 +16,10 @@ angular
     'ui.router',
     'ngSanitize',
     'chart.js',
+    'rzModule',
     'ngTouch'
   ])
-  .config(function ($stateProvider, $urlRouterProvider){//, $locationProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {//, $locationProvider) {
     // $locationProvider.html5Mode(true);
     $urlRouterProvider.when('/user', '/user/history');
     $urlRouterProvider.otherwise('/');
@@ -36,6 +37,12 @@ angular
         templateUrl: 'views/history.html',
         controller: 'HistoryCtrl',
         controllerAs: 'history'
+      })
+      .state('user.habits', {
+        url: '/habits',
+        templateUrl: 'views/habits.html',
+        controller: 'HabitsCtrl',
+        controllerAs: 'habits'
       })
       .state('home', {
         url: '/',
