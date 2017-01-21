@@ -18,7 +18,7 @@ angular
     'ngTouch'
   ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+    // $locationProvider.html5Mode(true);
 
     // $urlRouterProvider.when('/instructor', '/instructor/TaNeeds');
     // $urlRouterProvider.when('/admin', '/admin/courseMap');
@@ -28,6 +28,7 @@ angular
     //   controller: 'UserCtrl',
     //   controllerAs: 'user'
     // })
+
     $urlRouterProvider.otherwise('/');
     $stateProvider
       // .state('login', {
@@ -56,5 +57,12 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
-      });
+      })
+      .state('settings', {
+        url: '/settings',
+        abstract: false,
+        templateUrl: 'views/settings.html',
+        controller: 'SettingsCtrl',
+        controllerAs: 'settings'
+      })
   });
