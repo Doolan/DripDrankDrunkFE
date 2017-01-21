@@ -1,0 +1,44 @@
+<!--<p>This is the day view.</p>-->
+
+<div class="ui fluid container">
+    <div class="ui centered relaxed grid">
+        <div class="row">
+            <div class="six wide column">
+                <div class="ui medium statistic">
+                    <div class="value">
+                        {{overview.start}}
+                    </div>
+                    <div class="label">
+                        Started Drinking At:
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <div class="ui medium statistic">
+                    <div class="value">
+                        {{overview.total}}
+                    </div>
+                    <div class="label">
+                        Total Drinks
+                    </div>
+                </div>
+            </div>
+            <div class="six wide column">
+                <div class="ui medium statistic">
+                    <div class="value">
+                        {{overview.end}}
+                    </div>
+                    <div class="label">
+                        Finished Drinking At:
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vertical-spacer"></div>
+    <div class="vertical-spacer"></div>
+    <div class="ui container">
+        <canvas id="BAC" ></canvas>        
+    </div>
+</div>
+</div>

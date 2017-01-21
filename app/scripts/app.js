@@ -39,6 +39,13 @@ angular
         controller: 'HistoryCtrl',
         controllerAs: 'history'
       })
+      .state('user.day', {
+        url: '/day/:month/:day/:year',
+        abstract: false,
+        templateUrl: 'views/day.html',
+        controller: 'DayCtrl',
+        controllerAs: 'day'
+      })
       .state('user.habits', {
         url: '/habits',
         templateUrl: 'views/habits.html',

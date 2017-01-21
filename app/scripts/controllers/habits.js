@@ -154,7 +154,7 @@ angular.module('dripdrankdrunkApp')
       }
       $scope.moneyChart.data = [data];
 
-      var kroger = false;
+      var kroger = true;
       if(kroger){
         $scope.moneyChart.series = ['Money Spent', 'Money Spent at Kroger'];
         var prices = data.map(function(v){return v*0.9;});
