@@ -22,6 +22,7 @@ angular
   .config(function ($stateProvider, $urlRouterProvider) {//, $locationProvider) {
     // $locationProvider.html5Mode(true);
     $urlRouterProvider.when('/user', '/user/history');
+    
     $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('user', {
@@ -50,6 +51,13 @@ angular
         templateUrl: 'views/settings.html',
         controller: 'SettingsCtrl',
         controllerAs: 'settings'
+      })
+      .state('user.login', {
+        url: '/login',
+        abstract: false,
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
       })
       .state('home', {
         url: '/',
