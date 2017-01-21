@@ -10,15 +10,13 @@
  */
 angular
   .module('dripdrankdrunkApp', [
-    'DataManager',
-    'ngAnimate',
+    'DataManager',    
     'ngCookies',
     'ngResource',
     'ui.router',
     'ngSanitize',
     'chart.js',
     'rzModule',
-    'ngTouch'
   ])
   .run(function ($state, $rootScope) {
     $rootScope.$on('$stateChangeError', function (evt, toState, toParams, fromState, fromParams, error) {
