@@ -37,5 +37,9 @@
     "start": "node server.js",
     "test": "karma start test/karma.conf.js",
     "postinstall": "bower install && grunt build"
+  },
+  "dependencies": {
+    "bower": "^1.8.0",
+    "grunt-cli": "^1.2.0"
   }
 }
