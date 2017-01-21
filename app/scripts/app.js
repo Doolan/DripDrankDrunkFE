@@ -13,23 +13,42 @@ angular
     'ngAnimate',
     'ngCookies',
     'ngResource',
-    'ngRoute',
+    'ui.router',
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+
+    // $urlRouterProvider.when('/instructor', '/instructor/TaNeeds');
+    // $urlRouterProvider.when('/admin', '/admin/courseMap');
+    // $urlRouterProvider.when('/student', '/student/apply/CSSE/201720');
+    $urlRouterProvider.otherwise('/');
+    $stateProvider
+      .state('login', {
+        url: '/login',
+        abstract: false,
+        params: {
+          'toState': '',
+          'toParams': {}
+        },
+        controller: 'LoginController',
+        templateUrl: 'modules/login/login.html',
+        resolve: {
+        }
+      })
+      .state('home', {
+        url: '/',
+        abstract: false,
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
+      .state('about', {
+        url: '/',
+        abstract: false,
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
   });
