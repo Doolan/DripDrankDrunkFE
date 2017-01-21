@@ -1,3 +1,9 @@
+/node_modules
+/dist
+/.tmp
+/.sass-cache
+/bower_components
+
 
 # Created by https://www.gitignore.io/api/eclipse,webstorm,jetbrains,visualstudiocode,node
 
