@@ -23,20 +23,26 @@ angular
     // $urlRouterProvider.when('/instructor', '/instructor/TaNeeds');
     // $urlRouterProvider.when('/admin', '/admin/courseMap');
     // $urlRouterProvider.when('/student', '/student/apply/CSSE/201720');
+    // .when('/user', {
+    //   templateUrl: 'views/user.html',
+    //   controller: 'UserCtrl',
+    //   controllerAs: 'user'
+    // })
     $urlRouterProvider.otherwise('/');
     $stateProvider
-      .state('login', {
-        url: '/login',
-        abstract: false,
-        params: {
-          'toState': '',
-          'toParams': {}
-        },
-        controller: 'LoginController',
-        templateUrl: 'modules/login/login.html',
-        resolve: {
-        }
-      })
+      // .state('login', {
+      //   url: '/login',
+      //   abstract: false,
+      //   params: {
+      //     'toState': '',
+      //     'toParams': {}
+      //   },
+      //   controller: 'LoginController',
+      //   templateUrl: 'modules/login/login.html',
+      //   resolve: {
+      //   }
+      // })
+      // .state('')
       .state('home', {
         url: '/',
         abstract: false,
