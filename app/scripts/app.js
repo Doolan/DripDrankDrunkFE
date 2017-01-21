@@ -59,17 +59,10 @@ angular
         controller: 'SettingsCtrl',
         controllerAs: 'settings'
       })
-      .state('user.login', {
-        url: '/login',
-        abstract: false,
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl',
-        controllerAs: 'login'
-      })
       .state('home', {
         url: '/',
         abstract: false,
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/login.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
