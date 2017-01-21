@@ -19,66 +19,66 @@ angular.module('dripdrankdrunkApp')
     };
 
     var drinkData = {
-      'person': 'Bob',
-      '_id': '58837f98740342e3b68bcff7',
-      'start': 'Tue Jan 05 2016 23:37:19 GMT-0500 (EST)',
-      'drinks': [
+      person: 'Bob',
+      _id: '58837f98740342e3b68bcff7',
+      start: 'Tue Jan 05 2016 23:37:19 GMT-0500 (EST)',
+      drinks: [
         {
-          'type': 'Shot',
-          'time': 'Fri Jan 01 2016 01:21:09 GMT-0500 (EST)'
+          type: 'Shot',
+          time: 'Fri Jan 01 2016 01:21:09 GMT-0500 (EST)'
         },
         {
-          'type': 'Mixed',
-          'time': 'Fri Jan 01 2016 05:52:48 GMT-0500 (EST)'
+          type: 'Mixed',
+          time: 'Fri Jan 01 2016 05:52:48 GMT-0500 (EST)'
         },
         {
-          'type': 'Wine',
-          'time': 'Fri Jan 01 2016 03:16:51 GMT-0500 (EST)'
+          type: 'Wine',
+          time: 'Fri Jan 01 2016 03:16:51 GMT-0500 (EST)'
         },
         {
-          'type': 'Beer',
-          'time': 'Fri Jan 01 2016 04:16:59 GMT-0500 (EST)'
+          type: 'Beer',
+          time: 'Fri Jan 01 2016 04:16:59 GMT-0500 (EST)'
         },
         {
-          'type': 'Wine',
-          'time': 'Fri Jan 01 2016 01:07:58 GMT-0500 (EST)'
+          type: 'Wine',
+          time: 'Fri Jan 01 2016 01:07:58 GMT-0500 (EST)'
         },
         {
-          'type': 'Mixed',
-          'time': 'Fri Jan 01 2016 03:59:23 GMT-0500 (EST)'
+          type: 'Mixed',
+          time: 'Fri Jan 01 2016 03:59:23 GMT-0500 (EST)'
         },
         {
-          'type': 'Beer',
-          'time': 'Fri Jan 01 2016 03:27:56 GMT-0500 (EST)'
+          type: 'Beer',
+          time: 'Fri Jan 01 2016 03:27:56 GMT-0500 (EST)'
         },
         {
-          'type': 'Shot',
-          'time': 'Fri Jan 01 2016 02:11:10 GMT-0500 (EST)'
+          type: 'Shot',
+          time: 'Fri Jan 01 2016 02:11:10 GMT-0500 (EST)'
         },
         {
-          'type': 'Wine',
-          'time': 'Fri Jan 01 2016 04:50:12 GMT-0500 (EST)'
+          type: 'Wine',
+          time: 'Fri Jan 01 2016 04:50:12 GMT-0500 (EST)'
         },
         {
-          'type': 'Wine',
-          'time': 'Fri Jan 01 2016 03:00:15 GMT-0500 (EST)'
+          type: 'Wine',
+          time: 'Fri Jan 01 2016 03:00:15 GMT-0500 (EST)'
         },
         {
-          'type': 'Mixed',
-          'time': 'Fri Jan 01 2016 04:32:31 GMT-0500 (EST)'
+          type: 'Mixed',
+          time: 'Fri Jan 01 2016 04:32:31 GMT-0500 (EST)'
         },
         {
-          'type': 'Liquor',
-          'time': 'Fri Jan 01 2016 02:04:41 GMT-0500 (EST)'
+          type: 'Liquor',
+          time: 'Fri Jan 01 2016 02:04:41 GMT-0500 (EST)'
         }
       ]
     };
 
     var bodyData = {
-      "height": 54,
-      "weight": 180,
-      "age": 24,
-      "sex": "male"
+      height: 54,
+      weight: 180,
+      age: 24,
+      sex: 'male'
     };
 
     var handleDrinkData = function (data) {

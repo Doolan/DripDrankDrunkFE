@@ -34,8 +34,7 @@ angular.module('dripdrankdrunkApp')
           },
           inline: true,
           onSuccess: function (event, fields) {
-            //what happens when the form is filed in
-            console.log("signed in", fields);
+            //what happens when the form is filed in            
             if (event) {
               event.preventDefault();
             }
@@ -59,12 +58,12 @@ angular.module('dripdrankdrunkApp')
 
 
     var authenticate = function (fields) {
-      $('.ui.login.button').addClass("disabled");
+      $('.ui.login.button').addClass('disabled');
       AuthService.login(fields.username, fields.password, function (token, err) {
         if (err) {
           $('.ui.error.message').html(
             '<ui class="list"><li>Invalid Username or Password</li></ui>').show();
-          $('.ui.login.button').removeClass("disabled");
+          $('.ui.login.button').removeClass('disabled');
         } else {
           $state.go('user.history');
         }
