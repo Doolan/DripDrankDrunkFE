@@ -153,6 +153,15 @@ angular.module('dripdrankdrunkApp')
         }
       }
       $scope.moneyChart.data = [data];
+
+      var kroger = false;
+      if(kroger){
+        $scope.moneyChart.series = ['Money Spent', 'Money Spent at Kroger'];
+        var prices = data.map(function(v){return v*0.9;});
+        $scope.moneyChart.data.push(prices);
+      }else{
+        $scope.moneyChart.series = ['Money Spent', 'Money Spent at Kroger'];
+      }
     };
     refreshCharts();
   }]);
