@@ -16,11 +16,13 @@ angular
     'ui.router',
     'ngSanitize',
     'chart.js',
+    'rzModule',
     'ngTouch'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {//, $locationProvider) {
     // $locationProvider.html5Mode(true);
     $urlRouterProvider.when('/user', '/user/history');
+    
     $urlRouterProvider.otherwise('/');
     $stateProvider
       .state('user', {
@@ -37,12 +39,25 @@ angular
         controller: 'HistoryCtrl',
         controllerAs: 'history'
       })
+      .state('user.habits', {
+        url: '/habits',
+        templateUrl: 'views/habits.html',
+        controller: 'HabitsCtrl',
+        controllerAs: 'habits'
+      })
       .state('user.settings', {
         url: '/settings',
         abstract: false,
         templateUrl: 'views/settings.html',
         controller: 'SettingsCtrl',
         controllerAs: 'settings'
+      })
+      .state('user.login', {
+        url: '/login',
+        abstract: false,
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl',
+        controllerAs: 'login'
       })
       .state('home', {
         url: '/',
@@ -58,5 +73,4 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       });
-
   });
