@@ -15,13 +15,13 @@ angular.module('dripdrankdrunkApp')
       'Karma'
     ];
 
-    var settingsPageSetup = function(){
-
-    }
+    var settingsPageSetup = function () {
+      
+    };
 
     //on scope load
-    $scope.$on('$viewContentLoaded', function(evt){
-        settingsPageSetup();
+    $scope.$on('$viewContentLoaded', function () {
+      settingsPageSetup();
     });
 
 

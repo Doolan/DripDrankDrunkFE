@@ -1,32 +1,42 @@
-<form class="ui form">
-    <div class="field">
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Name">
-    </div>
-    <div class="field">
-        <label>Sex</label>
-        <select class="ui fluid dropdown">
-            <option value="">Sex</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-        </select>
-    </div>
-    <div class="ui right labeled input">
-        <input type="text" placeholder="Enter age..">
-        <div class="ui basic label">
-            years
+<div class="ui container">
+    <form class="ui form">
+        <div class="two fields">
+            <div class="field">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Name">
+            </div>
+            <div class="field">
+                <label>Sex</label>
+                <select class="ui fluid dropdown">
+                    <option value="">Sex</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
         </div>
-    </div>
-    <div class="ui right labeled input">
-        <input type="text" placeholder="Enter weight..">
-        <div class="ui basic label">
-            lbs
+        <div class="two fields">
+            <div class="field">
+                <div class="ui right labeled input">
+                    <input type="text" placeholder="Enter age..">
+                    <div class="ui basic label">
+                        years
+                    </div>
+                </div>
+            </div>
+            <div></div>
+            <div class="field">
+                <div class="ui right labeled input">
+                    <input type="text" placeholder="Enter weight..">
+                    <div class="ui basic label">
+                        lbs
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="two fields">
-      <div class="field">
         <label>Height</label>
-        <select class="ui fluid dropdown">
+        <div class="two fields">
+            <div class="field">
+                <select class="ui fluid dropdown">
             <option value="">Feet</option>
             <option value="0">0</option>
             <option value="1">1</option>
@@ -39,10 +49,9 @@
             <option value="8">8</option>
             <option value="9">9</option>
         </select>
-      </div>
-      </div>
-      <div class="field">
-        <select class="ui fluid dropdown">
+            </div>
+            <div class="field">
+                <select class="ui fluid dropdown">
             <option value="">Inches</option>
             <option value="0">0</option>
             <option value="1">1</option>
@@ -57,7 +66,8 @@
             <option value="9">10</option>
             <option value="9">11</option>
         </select>
-      </div>
-    </div>
-    <button class="ui button" type="submit">Update</button>
-</form>
+            </div>
+        </div>
+        <button class="ui button" type="submit">Update</button>
+    </form>
+</div>
