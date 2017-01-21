@@ -124,20 +124,19 @@ angular.module('dripdrankdrunkApp')
           var prevPoint = {
             x: drinks[i].time.diff($scope.overview.startTime, 'hours',true) - timeOffset/2,
             y:midBac
-          }
+          };
 
           var point = {
             x: drinks[i].time.diff($scope.overview.startTime, 'hours',true),
             y: bac
           };
-          // console.log(prevPoint, point);
+          
           residualBAC = bac;
           pastTime = drinks[i].time;
           data.push(prevPoint);          
           data.push(point);          
         }
         $scope.scatterData = data;
-        // console.log(data);
     };
 
 

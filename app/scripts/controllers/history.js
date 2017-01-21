@@ -8,9 +8,13 @@
  * Controller of the dripdrankdrunkApp
  */
 angular.module('dripdrankdrunkApp')
-  .controller('HistoryCtrl', ['$scope', function ($scope) {
-
- $scope.startDate = '1/15/2017';
+  .controller('HistoryCtrl', ['$scope', '$state', function ($scope, $state) {
+    var weekStartDate = moment().weekday(0);
+    if(weekStartDate.day() === moment().day()){
+      weekStartDate = moment().weekday(-7);
+    }
+    // console.log(moment().weekday(0).toString());
+    $scope.startDate = weekStartDate.format('MMMM Do YYYY');
     $scope.displays = {
       charts: {
         pie: {
@@ -20,11 +24,19 @@ angular.module('dripdrankdrunkApp')
         bar: {
           labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
           series: ['This Week', 'Average'],
-          data: [[],[]],
-          options: { legend: { display: true } }
+          data: [[], []],
+          options: { legend: { display: true } },
+          onClick: function (legendItem, event) {
+            if (legendItem && legendItem.length >0) {
+              console.log(legendItem);
+              console.log(legendItem[0]._index);
+              var dateClicked = weekStartDate.add(legendItem._index);
+              $state.go('user.day', {month: dateClicked.month(), day:dateClicked.day() , year: dateClicked.year()});
+            }
+          }
         }
       },
-      total:0 
+      total: 0
 
     };
 
@@ -41,16 +53,16 @@ angular.module('dripdrankdrunkApp')
     };
 
     $scope.weekAverage = {
-      drinks: [1.5, 0, 0, 3.5, 3.5, 2.8]
+      drinks: [1.5, 0, 0, 3.5, 3.5, 2.8, 5]
     };
 
-    var buildCircle = function(breakdown){
+    var buildCircle = function (breakdown) {
       var returnObj = {
-        keys:[],
-        vals:[],
-        count:0
+        keys: [],
+        vals: [],
+        count: 0
       };
-      for(var key in breakdown){
+      for (var key in breakdown) {
         returnObj.keys.push(key);
         returnObj.vals.push(breakdown[key]);
         returnObj.count += parseInt(breakdown[key]);
@@ -59,23 +71,22 @@ angular.module('dripdrankdrunkApp')
       $scope.displays.charts.pie.labels = returnObj.keys;
       $scope.displays.charts.pie.data = returnObj.vals;
       $scope.displays.total = returnObj.count;
-      
+
       // return returnObj;
     };
 
-    var updateDoubleBar = function(week, avg){
-        if(week){
-          $scope.displays.charts.bar.data[0] = week;
-        }
-        if(avg){
-          $scope.displays.charts.bar.data[1] = avg;
-        }
+    var updateDoubleBar = function (week, avg) {
+      if (week) {
+        $scope.displays.charts.bar.data[0] = week;
+      }
+      if (avg) {
+        $scope.displays.charts.bar.data[1] = avg;
+      }
     };
 
     var setup = function () {
       updateDoubleBar($scope.weekData.drinks, $scope.weekAverage.drinks);
       buildCircle($scope.weekData.breakdown);
-      console.log($scope.displays.charts);
     };
 
     $scope.$on('$viewContentLoaded', function () {
