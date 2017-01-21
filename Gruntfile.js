@@ -11,7 +11,6 @@ module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
-  require('load-grunt-tasks')(grunt);
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
@@ -25,6 +24,7 @@ module.exports = function (grunt) {
     dist: 'dist'
   };
 
+  var pkg = require('./package.json');
   // Define the configuration for all the tasks
   grunt.initConfig({
 
