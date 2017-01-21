@@ -44,6 +44,13 @@ angular
         controller: 'HabitsCtrl',
         controllerAs: 'habits'
       })
+      .state('user.settings', {
+        url: '/settings',
+        abstract: false,
+        templateUrl: 'views/settings.html',
+        controller: 'SettingsCtrl',
+        controllerAs: 'settings'
+      })
       .state('home', {
         url: '/',
         abstract: false,
