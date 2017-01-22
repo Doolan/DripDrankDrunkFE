@@ -28,10 +28,7 @@ angular.module('dripdrankdrunkApp')
           options: { legend: { display: true } },
           onClick: function (legendItem, event) {
             if (legendItem && legendItem.length >0) {
-              console.log(legendItem);
-              console.log(legendItem[0]._index);
               var dateClicked = weekStartDate.add(legendItem._index, 'days');
-              // console.log(weekStartDate, dateClicked, {month: dateClicked.month()+1, day:dateClicked.date() , year: dateClicked.year()});
               $state.go('user.day', {month: dateClicked.month()+1, day:dateClicked.date() , year: dateClicked.year()});
             }
           }

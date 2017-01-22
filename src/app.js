@@ -1,6 +1,5 @@
 (function () {
-    var app = angular.module('dripdrankdrunkApp', ['DataManager', 'ui.router', 'chart.js',
-        'rzModule']);
+    var app = angular.module('dripdrankdrunkApp', ['DataManager', 'ui.router', 'chart.js', 'rzModule']);
 
 
     app.run(function ($state, $rootScope) {

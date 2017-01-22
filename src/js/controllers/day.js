@@ -9,7 +9,6 @@
  */
 angular.module('dripdrankdrunkApp')
   .controller('DayCtrl', function ($scope, $stateParams) {
-    console.log($stateParams.month, $stateParams.day, $stateParams.year);
 
     $scope.overview = {
       start: new Date(),
