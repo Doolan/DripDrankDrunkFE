@@ -51,9 +51,9 @@
     pointer-events: none;
     z-index:9999;
 }
-.angular-centered {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    margin: auto;
-}
+/*.angular-centered {*/
+    /*display: table-cell;*/
+    /*vertical-align: middle;*/
+    /*text-align: center;*/
+    /*margin: auto;*/
+/*}*/

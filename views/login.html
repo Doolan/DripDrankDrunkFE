@@ -21,7 +21,7 @@
   <div class="vertical-spacer"></div>
   <centered>
     <div class="ui text container">
-      <div class="ui centered card">
+      <div class="ui centered fluid card">
         <div class="content">
           <form class="ui form" id="login">
             <div class="field">
@@ -35,9 +35,12 @@
             <div class="ui error message"></div>
           </form>
         </div>
-        <button class="ui button" ng-click='loginFunc()'>Login</button>
-        <div class="vertical-quarter-spacer"></div>
-        <button class="ui button" ng-click='registerFunc()'>Register</button>
+        <div class="ui attached buttons">
+          <button class="ui basic black button" ng-click='register()'>Register</button>
+          <div class="or"></div>
+        <button class="ui black button" ng-click='authenticate()'>Login</button>
+
+        </div>
       </div>
     </div>
   </centered>
