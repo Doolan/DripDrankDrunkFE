@@ -2,7 +2,7 @@
     <!--<div class="vertical-spacer"></div>-->
     <div class="ui relaxed centered grid">
         <div class="row">
-            <div class="six wide computer sixteen wide mobile column">
+            <div class="six wide column computer only">
                 <h1 class="ui centered header">Refine your Habits</h1>
             </div>
             <div class="ten wide column computer only">
@@ -50,6 +50,16 @@
                         <div class="vertical-quater-spacer"></div>
                     </div>
                 </div>
+            </div>
+            <div class="ten wide computer sixteen wide mobile column ">
+                <div class="bubbleChart">
+                    <canvas class="chart chart-bubble" chart-data="data" chart-colors="colors"
+                            chart-options="options"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="six wide computer sixteen wide mobile column">
                 <div class="ui fluid card">
                     <div class="content">
                         <div class="section">
@@ -90,20 +100,9 @@
                     <div class="vertical-quater-spacer"></div>
                 </div>
             </div>
-            <div class="ten wide column">
-                <div class="ui mobile only grid">
-                    <div class="ui vertical-spacer"></div>
-                <h1 class="ui centered mobile only header">Monthly Impact
-                    <small> (4 weeks)</small>
-                </h1>
-                    <div class="ui vertical-spacer"></div>
 
-                </div>
-                <div class="bubbleChart">
-                    <canvas class="chart chart-bubble" chart-data="data" chart-colors="colors"
-                            chart-options="options"></canvas>
-                </div>
-                <div class="vertical-spacer"></div>
+            <div class="ten wide computer sixteen wide mobile column">
+                <!--<div class="vertical-spacer"></div>-->
                 <canvas id="line" class="chart chart-line" chart-data="moneyChart.data"
                         chart-labels="moneyChart.labels" chart-series="moneyChart.series">
                     <!--chart-dataset-override="datasetOverride" chart-click="onClick"-->
