@@ -1,0 +1,96 @@
+<div class="ui container">
+  <!--<div class="vertical-spacer"></div>-->
+  <div class="ui relaxed centered grid">
+    <div class="row">
+      <div class="five wide column">
+        <div class="ui fluid card">
+          <div class="content">
+            <h1 class="ui header">Refine your Habits</h1>
+          </div>
+          <div class="content">
+            <div class="vertical-half-spacer"></div>
+            <div class="section">
+              <h2 class="ui centered header">Thursday - Saturday</h2>
+              <label>How Many Nights do you drink:</label>
+              <div class="vertical-half-spacer"></div>
+              <div class="three ui buttons">
+                <button class="ui grey button" ng-class="{basic:controls.weekendBttns !== 1}"
+                        ng-click="updateWeekend(1)"> One
+                </button>
+                <button class="ui  grey button" ng-class="{basic:controls.weekendBttns !== 2}"
+                        ng-click="updateWeekend(2)">Two
+                </button>
+                <button class="ui grey button" ng-class="{basic:controls.weekendBttns !== 3}"
+                        ng-click="updateWeekend(3)">Three
+                </button>
+              </div>
+              <div class="vertical-spacer"></div>
+              <label>How Many Drinks do you have a night on average:</label>
+              <div class="vertical-half-spacer"></div>
+              <rzslider rz-slider-model="controls.weekendSlider.value"
+                        rz-slider-options="controls.weekendSlider.options">
+              </rzslider>
+              <div class="vertical-half-spacer"></div>
+              <label>How Much do you spend on average per night?</label>
+              <div class="vertical-half-spacer"></div>
+              <div class="ui right fluid labeled input">
+                <div class="ui label">$</div>
+                <input type="number" placeholder="Amount" ng-model="money.end" ng-change="updateMoney()">
+                <div class="ui basic label">.00</div>
+              </div>
+            </div>
+            <div class="vertical-half-spacer"></div>
+          </div>
+          <div class="content">
+            <div class="section">
+              <h2 class="ui centered header">Sunday - Wednesday</h2>
+              <label>How Many Nights do you drink:</label>
+              <div class="vertical-half-spacer"></div>
+              <div class="four ui buttons">
+                <button class="ui grey button" ng-class="{basic:controls.weekdayBttns !== 1}"
+                        ng-click="updateWeekday(1)"> One
+                </button>
+                <button class="ui  grey button" ng-class="{basic:controls.weekdayBttns !== 2}"
+                        ng-click="updateWeekday(2)">Two
+                </button>
+                <button class="ui grey button" ng-class="{basic:controls.weekdayBttns !== 3}"
+                        ng-click="updateWeekday(3)">Three
+                </button>
+                <button class="ui grey button" ng-class="{basic:controls.weekdayBttns !== 4}"
+                        ng-click="updateWeekday(4)">Four
+                </button>
+              </div>
+              <div class="vertical-half-spacer"></div>
+              <label>How Many Drinks do you have a night on average:</label>
+              <div class="vertical-half-spacer"></div>
+              <rzslider rz-slider-model="controls.weekdaySlider.value"
+                        rz-slider-options="controls.weekdaySlider.options">
+              </rzslider>
+              <div class="vertical-half-spacer"></div>
+              <label>How Much do you spend on average per night?</label>
+              <div class="vertical-half-spacer"></div>
+              <div class="ui right fluid labeled input">
+                <div class="ui label">$</div>
+                <input type="number" placeholder="Amount" ng-model="money.day" ng-change="updateMoney()">
+                <div class="ui basic label">.00</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ten wide column">
+        <h1 class="ui centered header">Monthly Impact
+          <small> (4 weeks)</small>
+        </h1>
+        <div class="bubbleChart">
+          <canvas class="chart chart-bubble" chart-data="data" chart-colors="colors" chart-options="options"></canvas>
+        </div>
+        <div class="vertical-spacer"></div>
+        <canvas id="line" class="chart chart-line" chart-data="moneyChart.data"
+                chart-labels="moneyChart.labels" chart-series="moneyChart.series">
+          <!--chart-dataset-override="datasetOverride" chart-click="onClick"-->
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

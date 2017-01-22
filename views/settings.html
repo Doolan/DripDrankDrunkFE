@@ -1,0 +1,78 @@
+<div class="ui container">
+  <label class="title">User Settings</label>
+  <div class="vertical-spacer"></div>
+  <form class="ui form">
+    <div class="two fields">
+      <div class="field">
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Name">
+      </div>
+      <div class="field">
+        <label>Sex</label>
+        <select class="ui fluid dropdown" name="sex">
+          <option value="">Sex</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+    </div>
+    <div class="two fields">
+      <div class="field">
+        <label>Age</label>
+        <div class="ui right labeled input">
+          <input type="text" placeholder="Enter age.." name="age">
+          <div class="ui basic label">
+            years
+          </div>
+        </div>
+      </div>
+      <div></div>
+      <div class="field">
+        <label>Weight</label>
+        <div class="ui right labeled input">
+          <input type="text" placeholder="Enter weight.." name="weight">
+          <div class="ui basic label">
+            lbs
+          </div>
+        </div>
+      </div>
+    </div>
+    <label>Height</label>
+    <div class="two fields">
+      <div class="field">
+        <select class="ui fluid dropdown" name="feet">
+          <option value="">Feet</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+        </select>
+      </div>
+      <div class="field">
+        <select class="ui fluid dropdown" name="inches">
+          <option value="">Inches</option>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="9">10</option>
+          <option value="9">11</option>
+        </select>
+      </div>
+    </div>
+    <button class="ui button" type="submit">Update</button>
+    <div class="ui error message"></div>
+  </form>
+</div>

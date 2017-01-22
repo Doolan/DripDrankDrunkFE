@@ -1,4 +1,3 @@
-
 // Our express application
 var express = require('express'),
     path = require('path'),
@@ -11,7 +10,7 @@ app
     .use(express.static('./'))
     // Any request not matched so far, send to main.html
     .get('*', function(req, res) {
-        res.sendFile('app/index.html', {
+        res.sendFile('index.html', {
             root: path.join(__dirname, './')
         });
     })
