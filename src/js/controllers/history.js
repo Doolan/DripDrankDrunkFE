@@ -8,9 +8,10 @@
  * Controller of the dripdrankdrunkApp
  */
 angular.module('dripdrankdrunkApp')
-  .controller('HistoryCtrl', ['$scope', '$state', function ($scope, $state) {
+  .controller('HistoryCtrl', ['$scope', '$state', 'DataService', function ($scope, $state, DataService) {
     var weekStartDate = moment().weekday(0);
-    if(weekStartDate.day() === moment().day()){
+
+    if (weekStartDate.day() === moment().day()) {
       weekStartDate = moment().weekday(-7);
     }
     // console.log(moment().weekday(0).toString());
@@ -27,9 +28,9 @@ angular.module('dripdrankdrunkApp')
           data: [[], []],
           options: { legend: { display: true } },
           onClick: function (legendItem, event) {
-            if (legendItem && legendItem.length >0) {
+            if (legendItem && legendItem.length > 0) {
               var dateClicked = weekStartDate.add(legendItem._index, 'days');
-              $state.go('user.day', {month: dateClicked.month()+1, day:dateClicked.date() , year: dateClicked.year()});
+              $state.go('user.day', { month: dateClicked.month() + 1, day: dateClicked.date(), year: dateClicked.year() });
             }
           }
         }
@@ -38,7 +39,8 @@ angular.module('dripdrankdrunkApp')
 
     };
 
-
+    //$scope.weekData;
+    //$scope.weekAverage;
     $scope.weekData = {
       drinks: [1, 0, 0, 2, 5, 3, 7],
       breakdown: {
@@ -53,6 +55,10 @@ angular.module('dripdrankdrunkApp')
     $scope.weekAverage = {
       drinks: [1.5, 0, 0, 3.5, 3.5, 2.8, 5]
     };
+
+
+
+
 
     var buildCircle = function (breakdown) {
       var returnObj = {
@@ -88,7 +94,14 @@ angular.module('dripdrankdrunkApp')
     };
 
     $scope.$on('$viewContentLoaded', function () {
-      setup();
+      DataService.getWeekly(moment(weekStartDate).year(), moment(weekStartDate).month() + 1, moment(weekStartDate).date(), function (data) {
+        console.log(data);
+        $scope.weekData.total = data.weekData.total;
+        $scope.weekData.drinks = data.weekData.drinks;
+        $scope.weekData.breakdown = data.weekData.breakdown;
+        $scope.weekAverage = data.weekAverage;
+        setup();
+      });
     });
 
 
