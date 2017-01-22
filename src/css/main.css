@@ -24,7 +24,7 @@
     padding-top: 1em;
 }
 
-.vertical-quater-spacer {
+.vertical-quarter-spacer {
     width: 100%;
     display: block;
     clear: all;
@@ -41,3 +41,19 @@
     font-weight: bold;
     font-size: 26pt;
 }
+.angular-center-container {
+    position: fixed;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    display:table;
+    pointer-events: none;
+    z-index:9999;
+}
+/*.angular-centered {*/
+    /*display: table-cell;*/
+    /*vertical-align: middle;*/
+    /*text-align: center;*/
+    /*margin: auto;*/
+/*}*/

@@ -8,7 +8,7 @@
  * Controller of the dripdrankdrunkApp
  */
 angular.module('dripdrankdrunkApp')
-  .controller('SettingsCtrl', ['$scope', function ($scope) {
+  .controller('SettingsCtrl', ['$scope','DataService', function ($scope,DataService) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -86,7 +86,17 @@ angular.module('dripdrankdrunkApp')
             ]
           }
         },
-        inline: true
+          inline: true,
+          onSuccess: function (event, fields) {
+            //what happens when the form is filed in            
+            if (event) {
+              event.preventDefault();
+            }
+            var height = fields.feet*12 + fields.inches;
+            DataService.setUserData(fields.name,fields.sex,fields.age,height,fields.weight);
+            return false;
+
+          }
       })
       ;
 
