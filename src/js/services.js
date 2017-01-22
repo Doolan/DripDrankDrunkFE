@@ -5,7 +5,7 @@
     var app = angular.module('DataManager', []);
 
     var host = "http://23.99.27.197:5000/";
-    var token;
+    var token = getToken('auth-token');
     app.service('AuthService', ['$http', function ($http) {
         var self = this;
 
@@ -21,7 +21,7 @@
                 }
             }).then(function (data) {
                 console.log('SUCCESS - login', data.data, data.data.access_token);
-                setToken('auth-token', data.data.access_token);
+                setToken('auth-token', 'Bearer ' + data.data.access_token);
                 $http.defaults.headers.common.Authorization = 'Bearer ' + data.data.access_token;
                 token = 'Bearer ' + data.data.access_token;
                 callback(data.data.access_token);
