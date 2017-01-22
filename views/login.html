@@ -19,20 +19,47 @@
   <div class="vertical-spacer"></div>
   <div class="vertical-spacer"></div>
   <div class="vertical-spacer"></div>
-  <label class="title">Login</label>
-  <div class="vertical-spacer"></div>
-  <form class="ui form">
-    <div class="field">
-      <label>Username</label>
-      <input type="text" placeholder="Username" name="username">
-    </div>
-    <div class="field">
-      <label>Password</label>
-      <input type="password" placeholder="Password" name="password">
-    </div>
-    <button class="ui login button" type="submit">Login</button>
-    <div class="ui error message"></div>
-  </form>
+
+  <div class="ui top attached tabular menu">
+    <a class="item active" data-tab="first">Login</a>
+    <a class="item" data-tab="second">Registration</a>
+  </div>
+  <div class="ui bottom attached tab segment active" data-tab="first">
+    <h1>Login</h1>
+    <div class="vertical-spacer"></div>
+    <form class="ui form" id="login">
+      <div class="field">
+        <label>Username</label>
+        <input type="text" placeholder="Username" name="username">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" placeholder="Password" name="password">
+      </div>
+      <button class="ui login button" type="submit">Login</button>
+      <div class="ui error message"></div>
+    </form>
+  </div>
+  <div class = "ui bottom attached tab segment" data-tab="second">
+    <h1>Registration</h1>
+    <div class="vertical-spacer"></div>
+    <form class="ui form" id="registration">
+      <div class="field">
+        <label>Username</label>
+        <input type="text" placeholder="Username" name="regusername">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" placeholder="Password" name="regpassword">
+      </div>
+      <div class="field">
+        <label>Confirm Password</label>
+        <input type="password" placeholder="Confirm Password" name="regpassword2">
+      </div>
+      <button class="ui login button" type="submit">Registration</button>
+      <div class="ui error message"></div>
+    </form>
+  </div>
   <div class="vertical-spacer"></div>
   <div class="vertical-spacer"></div>
 </div>
