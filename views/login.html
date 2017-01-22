@@ -19,20 +19,30 @@
   <div class="vertical-spacer"></div>
   <div class="vertical-spacer"></div>
   <div class="vertical-spacer"></div>
-  <label class="title">Login</label>
-  <div class="vertical-spacer"></div>
-  <form class="ui form">
-    <div class="field">
-      <label>Username</label>
-      <input type="text" placeholder="Username" name="username">
+  <centered>
+    <div class="ui text container">
+      <div class="ui centered fluid card">
+        <div class="content">
+          <form class="ui form" id="login">
+            <div class="field">
+              <label>Username</label>
+              <input type="text" placeholder="Username" name="username">
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <input type="password" placeholder="Password" name="password">
+            </div>
+            <div class="ui error message"></div>
+          </form>
+        </div>
+        <div class="ui attached buttons">
+          <button class="ui basic black button" ng-click='register()'>Register</button>
+          <div class="or"></div>
+        <button class="ui black button" ng-click='authenticate()'>Login</button>
+
+        </div>
+      </div>
     </div>
-    <div class="field">
-      <label>Password</label>
-      <input type="password" placeholder="Password" name="password">
-    </div>
-    <button class="ui login button" type="submit">Login</button>
-    <div class="ui error message"></div>
-  </form>
-  <div class="vertical-spacer"></div>
+  </centered>
   <div class="vertical-spacer"></div>
 </div>
